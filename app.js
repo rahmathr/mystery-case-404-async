@@ -23,10 +23,10 @@ function cariBarangBukti(barangBukti) {
     });
 }
 
-function tampilkanLaporan(barangBukti){
+function tampilkanLaporan(barangBukti, status){
     console.log("\n=== LAPORAN INVESTIGASI ===")
     console.log("Barang bukti:", barangBukti)
-    console.log("Status: Investigasi berhasil")
+    console.log("Status:", status)
 }
 
 async function mulaiInvestigasi(barangBukti) {
@@ -42,10 +42,11 @@ async function mulaiInvestigasi(barangBukti) {
         console.log("Barang bukti ditemukan:", hasilPemeriksaan)
 
         console.log("Investigasi selesai.")
-        tampilkanLaporan(barangBukti)
+        tampilkanLaporan(hasilPemeriksaan, "Investigasi berhasil");
 
     } catch (error) {
         console.log("Investigasi gagal:", error)
+        tampilkanLaporan(barangBukti, "Investigasi gagal")
     }
 }
 
